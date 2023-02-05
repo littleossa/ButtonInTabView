@@ -41,12 +41,15 @@ struct ContentView: View {
                 .tag(Selection.addItem)
         }
         .onChange(of: selection) { _ in
-            if selection == .addItem {
+            switch selection {
+                
+            case .list, .favorite:
+                lastSelection = selection
+
+            case .addItem:
                 print("Add Item or Do something")
                 selection = lastSelection
-                return
             }
-            lastSelection = selection
         }
     }
 }
