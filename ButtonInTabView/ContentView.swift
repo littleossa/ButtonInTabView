@@ -22,15 +22,15 @@ struct ContentView: View {
         TabView(selection: $selection) {
             Text("List")
                 .tabItem {
-                    Image(systemName: "list.bullet.rectangle")
-                    Text("List")
+                    Label("List",
+                          systemImage: "list.bullet.rectangle")
                 }
                 .tag(Selection.list)
             
             Text("Favorite")
                 .tabItem {
-                    Image(systemName: "star")
-                    Text("Favorite")
+                    Label("Favorite",
+                          systemImage: "star")
                 }
                 .tag(Selection.favorite)
             
